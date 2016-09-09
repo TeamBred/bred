@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Nav from './nav'
-import t from 'tcomb-form';
+// import t from 'tcomb-form';
 import { browserHistory } from 'react-router'
 import $ from 'jquery';
 

@@ -15,7 +15,11 @@ app.use(cors());
 app.use(bodyParser());
 app.use(express.static(__dirname + '/client'));
 
+<<<<<<< HEAD
 app.get('/signup', userCtrl.signup);
+=======
+app.post('/user', userCtrl.signup);
+>>>>>>> 7937b11c28bacc2e5a342dad69d9b61d88a047d6
 app.get('/user/:id', userCtrl.show);
 app.post('/login',
   passport.authenticate('local'), function(req, res) {

@@ -15,12 +15,13 @@ function signup(req, res) {
 	}).catch(function(err) {
 					console.log('error', err);
 	});
+
 }
 
 function show(req, res) {
 	console.log('in user-controller.show')
-	user.sync;
-	expenses.sync;
+	// user.sync;
+	// expenses.sync;
 	return res.send('user info')
 }
 
