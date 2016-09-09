@@ -1,5 +1,5 @@
 import React from 'react';
-import {Router, Route, Link, browserHistory} from 'react-router'
+import {Router, Route, Link, hashHistory} from 'react-router'
 import ReactDOM from 'react-dom';
 import DashBoard from './dashboard'
 import Login from './login'
@@ -20,7 +20,7 @@ class App extends React.Component {
 }
 
 ReactDOM.render((
-  <Router history={browserHistory}>
+  <Router history={hashHistory}>
     <Route path="/" component={App} />
     <Route path="/dashboard" component={DashBoard} />
     <Route path="/login" component={Login} />
