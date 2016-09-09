@@ -1,6 +1,6 @@
 //user-controller.js
 'use strict'
-const db = require('../models/user');
+const user = require('../models/user');
 
 function signup(req, res) {
 	console.log('in user-controller.signup')
@@ -8,6 +8,7 @@ function signup(req, res) {
 
 function show(req, res) {
 	console.log('in user-controller.show')
+	// user.sync;
 	return res.send('user info')
 }
 
