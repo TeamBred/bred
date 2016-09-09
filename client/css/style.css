@@ -1,0 +1,87 @@
+/*GLOBAL SETTINGS*/
+body {
+  margin: 0;
+  padding: 0;
+  background: #fff;
+}
+h1, h2, h3 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 800;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+a:hover {
+    text-decoration: none;
+    color: #FFF;
+}
+ul {
+	list-style: none;
+  margin: 0;
+}
+fieldset {
+	border: none;
+}
+.clearfix {
+	overflow: auto;
+}
+.buttons:hover {
+    border: solid 2px #37FDFC;
+}
+.text-center {
+  text-align: center;
+}
+.active li{
+  color: steelblue;
+}
+/* NAVBAR */
+.nav ul {
+  list-style: none;
+  background-color: #444;
+  font-size: 12px;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+.nav li {
+  font-family: 'Oswald', sans-serif;
+  line-height: 20px;
+  height: 20px;
+  border-bottom: 1px solid #888;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #fff;
+  display: block;
+  transition: .3s background-color;
+}
+.nav a:hover {
+  background-color: #37FDFC;
+}
+.nav a.active {
+  background-color: #fff;
+  color: #444;
+  cursor: default;
+}
+@media screen and (min-width: 600px) {
+  .nav li {
+    width: 120px;
+    border-bottom: none;
+    height: 50px;
+    line-height: 50px;
+    font-size: 1.4em;
+  }
+  .nav li {
+     float: left;
+   }
+   .nav ul {
+     overflow: auto;
+     /*width: 600px;*/
+     margin: 0 auto;
+   }
+   .nav {
+     background-color: #444;
+   }
+}
