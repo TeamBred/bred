@@ -3,6 +3,6 @@ import ReactDOM from 'react-dom';
 
 export default class ProgressBar extends React.Component {
   render() {
-    return <h1 > Hello < /h1>
+    return <h1 > progress bar < /h1>
   }
 }
