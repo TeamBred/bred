@@ -5,7 +5,7 @@ const dbUrl = 'postgres://zqfgesav:s317KdarS_J7BqbMhGuuxtUxEJyRNcmN@elmer.db.ele
 const sequelize = new Sequelize(dbUrl);
 
 
-const User = sequelize.define('user2', {
+const User = sequelize.define('user', {
   username: {
     type: Sequelize.STRING
   },

@@ -18,6 +18,9 @@ const Expenses = sequelize.define('expenses', {
  },
  recurring: {
    type: Sequelize.BOOLEAN
+ },
+ user_id: {
+   type: Sequelize.STRING
  }
 }, {
       classMethods:{

@@ -46,7 +46,7 @@ app.use(cors());
 app.use(bodyParser());
 app.use(express.static(__dirname + '/client'));
 
-app.get('/', userCtrl.signup);
+app.post('/user', userCtrl.signup);
 app.get('/user/:id', userCtrl.show);
 app.post('/login',
   passport.authenticate('local', {
