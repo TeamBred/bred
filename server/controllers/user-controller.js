@@ -5,12 +5,13 @@ const expenses = require('../models/expenses');
 
 function signup(req, res) {
 	console.log('in user-controller.signup')
+	
 }
 
 function show(req, res) {
 	console.log('in user-controller.show')
-	user.sync;
-	expenses.sync;
+	// user.sync;
+	// expenses.sync;
 	return res.send('user info')
 }
 
