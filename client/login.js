@@ -33,9 +33,8 @@ export default class Login extends React.Component {
     data: value
   })
   .done(function(data) {
-    self.clearForm()
+    console.log(data)
   });
-
     const path = `/dashboard/${userName}`
     browserHistory.push(path)
   }
