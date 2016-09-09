@@ -1,0 +1,39 @@
+{
+  "name": "bred",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TeamBred/bred.git"
+  },
+  "author": "TeamBred",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TeamBred/bred/issues"
+  },
+  "homepage": "https://github.com/TeamBred/bred#readme",
+  "dependencies": {
+    "express": "^4.14.0",
+    "nodemon": "^1.10.2",
+    "pg": "^6.1.0",
+    "pg-hstore": "^2.3.2",
+    "react": "^15.3.1",
+    "react-dom": "^15.3.1",
+    "react-router": "^2.7.0",
+    "sequelize": "^3.24.2",
+    "tcomb-form": "^0.9.10",
+    "victory": "^0.11.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.14.0",
+    "babel-loader": "^6.2.5",
+    "babel-preset-es2015": "^6.14.0",
+    "babel-preset-react": "^6.11.1",
+    "webpack": "^1.13.2",
+    "webpack-dev-server": "^1.15.1"
+  }
+}
