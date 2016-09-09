@@ -9,6 +9,7 @@ function signup(req, res) {
 
 function show(req, res) {
 	console.log('in user-controller.show')
+	user.sync;
 	expenses.sync;
 	return res.send('user info')
 }
