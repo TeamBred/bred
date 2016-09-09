@@ -14,4 +14,9 @@ function show(req, res) {
 	return res.send('user info')
 }
 
-module.exports = { signup, show };
+function login(req, res) {
+	console.log('in user-controller.login')
+  console.log(req.body)
+}
+
+module.exports = { signup, show, login };
