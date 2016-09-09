@@ -8,15 +8,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/JameyStiling/bred.git"
+    "url": "git+https://github.com/TeamBred/bred.git"
   },
   "author": "TeamBred",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/JameyStiling/bred/issues"
+    "url": "https://github.com/TeamBred/bred/issues"
   },
-  "homepage": "https://github.com/JameyStiling/bred#readme",
+  "homepage": "https://github.com/TeamBred/bred#readme",
   "dependencies": {
+    "express": "^4.14.0",
+    "nodemon": "^1.10.2",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^3.24.2",
     "react": "^15.3.1",
     "react-dom": "^15.3.1",
     "react-router": "^2.7.0"
