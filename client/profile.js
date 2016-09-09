@@ -6,9 +6,8 @@ export default class Profile extends React.Component {
   render() {
     return (
       <div>
-      < Nav />
-    <h1 > profile < /h1>
-    </div>
+        <h1 > profile < /h1>
+      </div>
   )
   }
 }

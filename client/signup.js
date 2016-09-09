@@ -6,8 +6,7 @@ export default class Signup extends React.Component {
   render() {
     return (
       <div>
-      < Nav />
-      <h1 > signup < /h1>
+        <h1 > signup < /h1>
       </div>
     )
   }
