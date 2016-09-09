@@ -36,14 +36,14 @@ export default class Login extends React.Component {
     self.clearForm()
   });
 
-    const path = '/dashboard'
+    const path = `/dashboard/${userName}`
     browserHistory.push(path)
   }
 
   render() {
     return (
       <div>
-        <h1> Login </h1>
+        <h1>Login</h1>
         <form onSubmit={this.onSubmit}>
           <input type="text" placeholder="username"/> {' '}
           <input type="password" placeholder="password"/>{' '}

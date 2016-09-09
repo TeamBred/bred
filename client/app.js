@@ -22,7 +22,7 @@ class App extends React.Component {
 ReactDOM.render((
   <Router history={browserHistory}>
     <Route path="/" component={App} >
-      <Route path="/dashboard" component={DashBoard} />
+      <Route path="/dashboard/:userName" component={DashBoard} />
       <Route path="/login" component={Login} />
       <Route path="/signup" component={Signup} />
       <Route path="/profile" component={Profile} />
