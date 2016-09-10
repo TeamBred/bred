@@ -15,10 +15,12 @@ export default class DashBoard extends React.Component {
     return (
       <div>
         <h2>{this.props.params.userName}s Dashboard</h2>
-        <Pie />
-        <ProgressBar />
         <Expense />
-        <TimeChart />
+        <ProgressBar />
+        <div className="flex">
+          <Pie />
+          <TimeChart />
+        </div>
       </div>
     )
   }
