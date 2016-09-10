@@ -14,7 +14,9 @@ export default class DashBoard extends React.Component {
   render() {
     return (
       <div>
-        <h2>{this.props.params.userName}s Dashboard</h2>
+        <h2>{this.props.user.username}s Dashboard</h2>
+        <Pie />
+        <ProgressBar />
         <Expense />
         <ProgressBar />
         <div className="flex">
