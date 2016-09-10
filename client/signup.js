@@ -8,7 +8,7 @@ export default class Signup extends React.Component {
 	onSubmit(evt) {
 		const self = this;
 		evt.preventDefault();
-		
+
 		const username = evt.target.elements[0].value;
 		const email = evt.target.elements[1].value;
 		const password = evt.target.elements[2].value;
@@ -36,7 +36,7 @@ export default class Signup extends React.Component {
 		    data: signupData
 		  })
 		  .done(function(data) {
-		    self.clearForm()
+		    console.log(data)
 		  });
 		}
 	}

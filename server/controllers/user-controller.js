@@ -1,6 +1,6 @@
 //user-controller.js
 'use strict'
-const user = require('../models/user');
+const User = require('../models/user');
 const expenses = require('../models/expenses');
 
 function signup(req, res) {
@@ -15,7 +15,7 @@ function signup(req, res) {
 	}).catch(function(err) {
 					console.log('error', err);
 	});
- 
+
 }
 
 function show(req, res) {
