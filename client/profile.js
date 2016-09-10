@@ -9,6 +9,7 @@ export default class Profile extends React.Component {
       <div>
         <br />
         <h1 > {JSON.stringify(this.props.user)}< /h1>
+        <h1> localstore = {localStorage.getItem("user")}
       </div>
   )
   }

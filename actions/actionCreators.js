@@ -1,3 +1,5 @@
+import $ from 'jquery';
+
 export function changeUserInfo(username, email){
   return {
     type: 'CHANGE_USER_INFO',
@@ -6,20 +8,18 @@ export function changeUserInfo(username, email){
   }
 }
 
-function fetchPosts(userObj) {
-  return dispatch => {
-    dispatch(requestPosts(userObj))
-    return fetch(`http://www.reddit.com/r/${userObj}.json`)
-      .then(response => response.json())
-      .then(json => dispatch(receivePosts(userObj, json)))
-  }
-}
-
-// export function receivePosts(userObj, json) {
-//   return {
-//     type: 'RECEIVE_POSTS',
-//     userObj,
-//     posts: json.data.children.map(child => child.data),
-//     receivedAt: Date.now()
+// export function sendData(userObj) {
+//   $.ajax({
+//     type: 'POST',
+//     url: 'http://localhost:3000/signup',
+//     data: userObj
+//   })
+//   .done(function(data) {
+//     return function(dispatch){
+//       dispatch({
+//         type: 'SENDDATA_SUCCESS',
+//         payload: data
+//       });
+//     }
+//   });
 //   }
-// }

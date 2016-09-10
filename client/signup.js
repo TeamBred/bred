@@ -7,9 +7,11 @@ import $ from 'jquery';
 export default class Signup extends React.Component {
 	constructor(props){
 		super(props);
+		this.onSubmit = this.onSubmit.bind(this);
 	}
 
 	onSubmit(evt) {
+		this.props.changeUserInfo(evt.target.elements[0].value, evt.target.elements[1].value)
 		const self = this;
 		evt.preventDefault();
 
@@ -31,10 +33,20 @@ export default class Signup extends React.Component {
 				signupData.username = username;
 				signupData.email = email,
 				signupData.password = password
+
+				$http.post('/signup', JSON.stringify(signupData))
+		      .success(function (response) {
+		        //update localStorage with response
+						localStorage.setItem("user", {username: username, email: email});
+		      })
+		      .error(function (response) {
+		        //log error
+		      });
 		}
 	}
 
   render() {
+		console.log('this is props', this.props)
     return (
       <div>
         <h1>Sign Up</h1>
