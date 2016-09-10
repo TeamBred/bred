@@ -41,6 +41,7 @@ export default class Signup extends React.Component {
 					type: 'ADD_USER',
 					user: data
 				});
+		    console.log('userData!!!!! - ',data);
 		  });
 		}
 	}

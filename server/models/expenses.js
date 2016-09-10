@@ -4,48 +4,25 @@ const dbUrl = 'postgres://zqfgesav:s317KdarS_J7BqbMhGuuxtUxEJyRNcmN@elmer.db.ele
 const sequelize = new Sequelize(dbUrl);
 
 const Expenses = sequelize.define('expenses', {
- title: {
+  title: {
+    type: Sequelize.STRING
+  },
+  category: {
    type: Sequelize.STRING
- },
- category: {
+  },
+  amount: {
    type: Sequelize.STRING
- },
- amount: {
+  },
+  date: {
    type: Sequelize.STRING
- },
- date: {
-   type: Sequelize.STRING
- },
- recurring: {
+  },
+  recurring: {
    type: Sequelize.BOOLEAN
  },
  user_id: {
    type: Sequelize.STRING
  }
-}, {
-      classMethods:{
-          associate:function(models){
-              Expenses.belongsTo(models.User);
-          }
-      }
-  },
-
-{
- freezeTableName: true // Model tableName will be the same as the model name
-});
-
-// Expenses.belongsTo(User); // Will add a expenses attribute to User to hold the primary key value for expenses
-
-Expenses.sync({force: true}).then(function () {
- // Table created
- return Expenses.create({
-   title: 'Bought some meats',
-   category: 'Food',
-   amount: '100',
-   date: '1/28/2016',
-   recurring: false
- });
-});
+  });
 
 
 module.exports = Expenses;

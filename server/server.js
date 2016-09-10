@@ -8,12 +8,17 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const User = require('./models/user.js');
 const PassportUse = require('./passport.js')
+const path = require('path');
 
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(cors());
 app.use(bodyParser());
-app.use(express.static(__dirname + '/client'));
+app.use(express.static(path.join(__dirname, './client')));
+
+app.get('/', (req, res) =>{
+	res.sendFile(path.join(__dirname, './../index.html'))
+});
 
 app.post('/signup', userCtrl.signup);
 app.get('/user/:id', userCtrl.show);

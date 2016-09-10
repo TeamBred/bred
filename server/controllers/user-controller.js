@@ -11,7 +11,7 @@ function signup(req, res) {
 			password: req.body.password,
 			income: req.body.income
 	}).then(function(user) {
-			res.send('200');
+			res.status('200').json(user);
 	}).catch(function(err) {
 					console.log('error', err);
 	});
