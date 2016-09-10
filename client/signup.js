@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Nav from './nav';
-import {Router, Route, Link} from 'react-router';
+import {Router, Route, Link, browserHistory} from 'react-router';
 import $ from 'jquery';
 
 export default class Signup extends React.Component {
@@ -18,7 +18,8 @@ export default class Signup extends React.Component {
 		const username = evt.target.elements[0].value;
 		const email = evt.target.elements[1].value;
 		const password = evt.target.elements[2].value;
-		const confirmPassword = evt.target.elements[2].value;
+		const confirmPassword = evt.target.elements[3].value;
+		const income = evt.target.elements[4].value;
 		let signupData = {};
 
 		if(password !== confirmPassword) {
@@ -33,7 +34,8 @@ export default class Signup extends React.Component {
 				signupData.username = username;
 				signupData.email = email;
 				signupData.password = password;
-				let stringData = JSON.stringify({username: username, email: email});
+				signupData.income = password;
+				let stringData = JSON.stringify({username: username, email: email, income: income});
 
 				$.ajax({
 				    url : "http://localhost:3000/signup",
@@ -42,6 +44,8 @@ export default class Signup extends React.Component {
 				    success: function(data, textStatus, jqXHR)
 				    {
 				      localStorage.setItem("user", stringData);
+							const path = `/profile`
+							browserHistory.push(path)
 				    },
 				    error: function (jqXHR, textStatus, errorThrown)
 				    {
@@ -61,6 +65,7 @@ export default class Signup extends React.Component {
           <input type="text" placeholder="email"/>{' '}
           <input type="password" placeholder="password"/>{' '}
           <input type="password" placeholder="confirm password"/>{' '}
+					<input type="text" placeholder="income"/>{' '}
           <button type="submit" className="submit-button">Submit</button>
         </form>
         <Link to="/login">Login</Link>
