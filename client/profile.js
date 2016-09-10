@@ -8,9 +8,6 @@ export default class Profile extends React.Component {
   submit(e) {
     e.preventDefault();
 
-    //resets field
-    e.target.elements[0].value = "";
-
     //create object from the values of the inputs
     const amount = e.target.elements[0].value;
     const category = e.target.elements[1].value;
@@ -32,6 +29,9 @@ export default class Profile extends React.Component {
       //if successful set items to local storage
       localStorage.setItem('expenses', JSON.stringify(data))
 	  });
+
+    //resets field
+    e.target.elements[0].value = "";
   }
 
   render() {
