@@ -59,7 +59,7 @@ export default class Signup extends React.Component {
 		// console.log('this is props', this.props)
     return (
       <div>
-        <div className="signup-container">
+        <div className="component-container">
           <h1 className="signup-header">BRED</h1>
           <h3 className="signup-subhead">Sign up now</h3>
           <form onSubmit={this.onSubmit}>
