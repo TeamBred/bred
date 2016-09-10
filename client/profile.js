@@ -58,6 +58,7 @@ export default class Profile extends React.Component {
             document.getElementById('rec-expenses-list').appendChild(listElem);
           }
         })
+        localStorage.setItem("expenses", JSON.stringify(data));
       }) 
 	  });
 
