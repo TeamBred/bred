@@ -4,7 +4,7 @@ import { routerReducer } from 'react-router-redux';
 
 function user(state = {}, action) {
 
-  console.log('userStateChange',action);
+  // console.log('userStateChange',action);
   switch (action.type) {
     case 'SENDDATA_SUCCESS':
       return Object.assign({}, state, user: { username: action.payload.username,
@@ -26,7 +26,7 @@ function user(state = {}, action) {
 }
 
 function expenses(state=[], action) {
-  console.log(state, action);
+  // console.log(state, action);
   return state;
 }
 

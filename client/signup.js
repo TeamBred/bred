@@ -59,16 +59,19 @@ export default class Signup extends React.Component {
 		// console.log('this is props', this.props)
     return (
       <div>
-        <h1>Sign Up</h1>
-        <form onSubmit={this.onSubmit}>
-          <input type="text" placeholder="username"/> {' '}
-          <input type="text" placeholder="email"/>{' '}
-          <input type="password" placeholder="password"/>{' '}
-          <input type="password" placeholder="confirm password"/>{' '}
-					<input type="text" placeholder="income"/>{' '}
-          <button type="submit" className="submit-button">Submit</button>
-        </form>
-        <Link to="/login">Login</Link>
+        <div className="component-container">
+          <h1 className="signup-header">BRED</h1>
+          <h3 className="signup-subhead">Sign up now</h3>
+          <form onSubmit={this.onSubmit}>
+            <input className="signup-input input" type="text" placeholder="username"/> {' '}
+            <input className="signup-input input" type="text" placeholder="email"/>{' '}
+            <input className="signup-input input" type="password" placeholder="password"/>{' '}
+            <input className="signup-input input" type="password" placeholder="confirm password"/>{' '}
+            <input className="signup-input input" type="text" placeholder="income"/>{' '}
+            <button type="submit" className="submit-button submit">Submit</button>
+          </form>
+          <h5>Already with us?  <Link to="/login">Login</Link></h5>
+        </div>
       </div>
     )
   }

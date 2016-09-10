@@ -28,15 +28,34 @@ export default class Login extends React.Component {
         data : value,
         success: function(data, textStatus, jqXHR)
         {
-          localStorage.setItem("user", stringData);
-          const path = `/dashboard`
-          browserHistory.push(path)
+          //upon successful login make get reqeust to get user data after login
+          let username = JSON.parse(localStorage.getItem('user')).username;
+          $.ajax({
+              url : "http://localhost:3000/api/user/" +username+ "/expense",
+              type: "GET",
+              success: function(data)
+              {
+                console.log('data from login',data)
+                let stringifiedData = JSON.stringify(data)
+                localStorage.setItem("expenses", stringifiedData);
+              },
+              error: function (jqXHR, textStatus, errorThrown)
+              {
+                console.log('no bueno');
+              }
+          }).then( function() {
+
+            const path = `/dashboard/`
+            browserHistory.push(path)
+          })
         },
         error: function (jqXHR, textStatus, errorThrown)
         {
           console.log('no bueno');
         }
     });
+
+
   }
 
   render() {
