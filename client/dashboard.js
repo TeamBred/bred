@@ -12,9 +12,11 @@ export default class DashBoard extends React.Component {
     super(props);
   }
   render() {
+
+    let user = JSON.parse(localStorage.getItem("user")).username;
     return (
       <div>
-        <h2>{this.props.user.username}s Dashboard</h2>
+        <h2>{user} Dashboard</h2>
         <h3 className="expenses">Expenses vs. Income</h3>
         <ProgressBar />
         <h3 className="expenses">Recent Expenses Breakdown</h3>
