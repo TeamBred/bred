@@ -36,23 +36,23 @@ export default class Signup extends React.Component {
 				let stringData = JSON.stringify({username: username, email: email});
 
 				$.ajax({
-				    url : "http://localhost:3000/signup",
-				    type: "POST",
-				    data : signupData,
-				    success: function(data, textStatus, jqXHR)
-				    {
-				      localStorage.setItem("user", stringData);
-				    },
-				    error: function (jqXHR, textStatus, errorThrown)
-				    {
-							console.log('no bueno');
-				    }
+			    url : "http://localhost:3000/signup",
+			    type: "POST",
+			    data : signupData,
+			    success: function(data, textStatus, jqXHR)
+			    {
+			      localStorage.setItem("user", stringData);
+			    },
+			    error: function (jqXHR, textStatus, errorThrown)
+			    {
+					console.log('no bueno');
+			    }
 				});
 		}
 	}
 
   render() {
-		console.log('this is props', this.props)
+		// console.log('this is props', this.props)
     return (
       <div>
         <h1>Sign Up</h1>
