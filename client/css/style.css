@@ -141,3 +141,81 @@ fieldset {
      background-color: #444;
    }
 }
+
+/* Home */
+.home-main {
+  font-family: 'Open Sans', sans-serif;
+  text-align: center;
+  width: 100%;
+  margin-top: 200px;
+}
+.home-main h1 {
+  margin: 0;
+  font-size: 52px;
+}
+.home-main h4 {
+  font-size: 32px;
+  margin-top: 20px;
+  margin-bottom: 50px;
+  font-weight: normal;
+}
+.home-buttons {
+  display: inline-block;
+}
+.home-box {
+  position: relative;
+  margin: 0 auto;
+  padding-top: 20px;
+  width: 800px;
+  height: 200px;
+}
+.home-main button {
+  font-family: inherit;
+  font-size: .875rem;
+  line-height: 2.75rem;
+  border-radius: .1875rem;
+  border: 0;
+  outline: none;
+  padding: 0 .9375rem;
+  color: #000;
+  text-decoration: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: inline-block;
+  min-width: 8.5rem;
+  cursor: pointer;
+  text-align: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  letter-spacing: .0125rem;
+  background-color: transparent;
+  border: 1px solid #000;
+  margin: 10px;
+}
+
+.home-main button:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+/* Background */
+video {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+  transform: translateX(-50%) translateY(-50%);
+  background-size: cover;
+  transition: 1s opacity;
+}
+.home-main {
+  position: fixed;
+  top: 0;
+}
