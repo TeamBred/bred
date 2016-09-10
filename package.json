@@ -32,7 +32,9 @@
     "react-dom": "^15.3.1",
     "react-redux": "^4.4.5",
     "react-router": "^2.7.0",
+    "react-router-redux": "^4.0.5",
     "redux": "^3.6.0",
+    "redux-thunk": "^2.1.0",
     "sequelize": "^3.24.2",
     "victory": "^0.11.0"
   },
