@@ -18,7 +18,11 @@ export default class DashBoard extends React.Component {
         <Pie />
         <ProgressBar />
         <Expense />
-        <TimeChart />
+        <ProgressBar />
+        <div className="flex">
+          <Pie />
+          <TimeChart />
+        </div>
       </div>
     )
   }
