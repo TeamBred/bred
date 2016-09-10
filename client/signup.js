@@ -3,10 +3,15 @@ import ReactDOM from 'react-dom';
 import Nav from './nav';
 import {Router, Route, Link} from 'react-router';
 import $ from 'jquery';
-// import store from './index';
 
 export default class Signup extends React.Component {
+	constructor(props){
+		super(props);
+		this.onSubmit = this.onSubmit.bind(this);
+	}
+
 	onSubmit(evt) {
+		this.props.changeUserInfo(evt.target.elements[0].value, evt.target.elements[1].value)
 		const self = this;
 		evt.preventDefault();
 
@@ -26,23 +31,28 @@ export default class Signup extends React.Component {
 			console.log('enter email')
 		}else {
 				signupData.username = username;
-				signupData.email = email,
-				signupData.password = password
-				sendData(signupData);
-		}
-		function sendData(signupData) {
-		  $.ajax({
-		    type: 'POST',
-		    url: 'http://localhost:3000/signup',
-		    data: signupData
-		  })
-		  .done(function(data) {
-		    console.log('userData!!!!! - ',data);
-		  });
+				signupData.email = email;
+				signupData.password = password;
+				let stringData = JSON.stringify({username: username, email: email});
+
+				$.ajax({
+				    url : "http://localhost:3000/signup",
+				    type: "POST",
+				    data : signupData,
+				    success: function(data, textStatus, jqXHR)
+				    {
+				      localStorage.setItem("user", stringData);
+				    },
+				    error: function (jqXHR, textStatus, errorThrown)
+				    {
+							console.log('no bueno');
+				    }
+				});
 		}
 	}
 
   render() {
+		console.log('this is props', this.props)
     return (
       <div>
         <h1>Sign Up</h1>

@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Nav from './nav'
-// import t from 'tcomb-form';
 import { browserHistory } from 'react-router'
 import $ from 'jquery';
 
@@ -25,18 +24,23 @@ export default class Login extends React.Component {
     if (value) {
       console.log(value)
     }
+    let stringData = JSON.stringify({username: userName, email: email});
 
-    // Submit form via jQuery/AJAX
-  $.ajax({
-    type: 'POST',
-    url: 'http://localhost:3000/login',
-    data: value
-  })
-  .done(function(data) {
-    console.log(data)
-  });
-    const path = `/dashboard/${userName}`
-    browserHistory.push(path)
+    $.ajax({
+        url : "http://localhost:3000/login",
+        type: "POST",
+        data : value,
+        success: function(data, textStatus, jqXHR)
+        {
+          localStorage.setItem("user", stringData);
+          const path = `/dashboard/${userName}`
+          browserHistory.push(path)
+        },
+        error: function (jqXHR, textStatus, errorThrown)
+        {
+          console.log('no bueno');
+        }
+    });
   }
 
   render() {
