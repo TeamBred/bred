@@ -36,7 +36,7 @@ export default class Signup extends React.Component {
 		    data: signupData
 		  })
 		  .done(function(data) {
-		    console.log(data)
+		    console.log('userData!!!!! - ',data);
 		  });
 		}
 	}
