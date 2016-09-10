@@ -31,17 +31,23 @@ export default class Signup extends React.Component {
 			console.log('enter email')
 		}else {
 				signupData.username = username;
-				signupData.email = email,
-				signupData.password = password
+				signupData.email = email;
+				signupData.password = password;
+				let stringData = JSON.stringify({username: username, email: email});
 
-				$http.post('/signup', JSON.stringify(signupData))
-		      .success(function (response) {
-		        //update localStorage with response
-						localStorage.setItem("user", {username: username, email: email});
-		      })
-		      .error(function (response) {
-		        //log error
-		      });
+				$.ajax({
+				    url : "http://localhost:3000/signup",
+				    type: "POST",
+				    data : signupData,
+				    success: function(data, textStatus, jqXHR)
+				    {
+				      localStorage.setItem("user", stringData);
+				    },
+				    error: function (jqXHR, textStatus, errorThrown)
+				    {
+							console.log('no bueno');
+				    }
+				});
 		}
 	}
 

@@ -4,12 +4,12 @@ import Nav from './nav';
 
 export default class Profile extends React.Component {
   render() {
-    console.log('this is props', this.props)
+    let userLocal = JSON.parse(localStorage.getItem("user"));
+    let username = userLocal.username;
     return (
       <div>
         <br />
-        <h1 > {JSON.stringify(this.props.user)}< /h1>
-        <h1> localstore = {localStorage.getItem("user")}
+        <h1>{username}</h1>
       </div>
   )
   }
