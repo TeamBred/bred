@@ -7,8 +7,6 @@ import Signup from './signup'
 import Profile from './profile'
 import Nav from './nav';
 import * as V from 'victory';
-import $ from 'jquery';
-
 
 class App extends React.Component {
   constructor() {

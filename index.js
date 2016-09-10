@@ -10,6 +10,7 @@ import Profile from './client/profile'
 import Nav from './client/nav';
 import theirApp from './theirApp';
 import * as V from 'victory';
+import Expense from './client/expense'
 
 
 
@@ -21,6 +22,7 @@ ReactDOM.render((
         <Route path="/login" component={Login} />
         <Route path="/signup" component={Signup} />
         <Route path="/profile" component={Profile} />
+        <Route path="/expense" component={Expense} />
       </Route>
     </Router>
   </Provider>

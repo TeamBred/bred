@@ -4,6 +4,7 @@ const app = express();
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const userCtrl = require('./controllers/user-controller.js');
+const expenseCtrl = require('./controllers/expense-controller.js');
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const User = require('./models/user.js');
@@ -20,8 +21,6 @@ app.get('/', (req, res) =>{
 	res.sendFile(path.join(__dirname, './../index.html'))
 });
 
-app.post('/signup', userCtrl.signup);
-app.get('/user/:id', userCtrl.show);
 app.post('/login',
   passport.authenticate('local'), function(req, res) {
     // authentication was successful.
@@ -29,6 +28,14 @@ app.post('/login',
     res.send('authentication successful');
   }
 );
+
+// user api
+app.post('/signup', userCtrl.signup);
+app.get('/api/user/:username', userCtrl.getUser);
+
+// expenses api
+app.get('/api/user/:username/expense', expenseCtrl.getAll);
+app.post('/api/user/:username/expense', expenseCtrl.create);
 
 passport.serializeUser(function(user, done) {
   done(null, user);
