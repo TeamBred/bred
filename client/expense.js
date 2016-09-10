@@ -10,7 +10,8 @@ export default class Expense extends React.Component {
     const amount = e.target.elements[0].value;
     const category = e.target.elements[1].value;
     // const username = this.props.username;
-    const username = 'placeholder';
+    const username = JSON.parse(localStorage.getItem("user")).username;
+    console.log(username)
 
     const expenseData = {
     	amount: amount,
@@ -24,7 +25,16 @@ export default class Expense extends React.Component {
 	    data: expenseData
 	  })
 	  .done(function(data) {
-	    console.log('expanseData - ',data);
+	  	console.log('expense saved')
+	    $.ajax({
+	    	type: 'GET',
+	    	url: 'http://localhost:3000/api/user/' + username + '/expense'
+	    })
+	    .done(function(data) {
+	    	console.log('expenses got', data)
+	    	localStorage.setItem("expenses", JSON.stringify(data));
+	    	console.log('local storage', localStorage.getItem("expenses"))
+	    })
 	  });
   }
 

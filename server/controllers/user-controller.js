@@ -17,7 +17,6 @@ function signup(req, res) {
 }
 
 function getUser(req, res) {
-	console.log('in user-controller.getUser')
  	User.find({ where: {
     	username: req.params.username
   	}
