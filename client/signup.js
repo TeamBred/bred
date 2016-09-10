@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import Nav from './nav';
 import {Router, Route, Link} from 'react-router';
 import $ from 'jquery';
+import store from './index';
 
 export default class Signup extends React.Component {
 	onSubmit(evt) {
@@ -36,7 +37,10 @@ export default class Signup extends React.Component {
 		    data: signupData
 		  })
 		  .done(function(data) {
-		    console.log(data)
+		    store.dispatch({
+					type: 'ADD_USER',
+					user: data
+				});
 		  });
 		}
 	}
