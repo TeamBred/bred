@@ -5,6 +5,7 @@ import { VictoryStack,VictoryBar } from 'victory';
 
 export default class ProgressBar extends React.Component {
   render() {
+
     return (
        <div className="progress">
        <VictoryStack horizontal
@@ -25,7 +26,7 @@ export default class ProgressBar extends React.Component {
          <VictoryBar
            style={{data: {fill: "gold"}}}
            data={[
-             {x: 1, y: 3}
+             {x: 1, y: 4}
            ]}
          />
        </VictoryStack>

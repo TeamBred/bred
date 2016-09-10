@@ -4,18 +4,19 @@ import { VictoryPie } from 'victory';
 
 export default class Pie extends React.Component {
   render() {
-
-    let testExpenses = [{cat:'food',cost:16,},{cat:'food',cost:33,},{cat:'bills',cost:4,},{cat:'shopping',cost:12,}]
+    
+      let testExpenses = JSON.parse(localStorage.getItem("expenses"));
+      let filler = ""
 
     let flattened = function reduce(array) {
         var out = [];
         var indexByCat = {};
         for (var i = array.length; i--;) {
-            if (!indexByCat[array[i].cat]) {
-                indexByCat[array[i].cat] = out.length;
+            if (!indexByCat[array[i].category]) {
+                indexByCat[array[i].category] = out.length;
                 out.push(array[i]);
             } else {
-                out[indexByCat[array[i].cat]].cost -= -array[i].cost;
+                out[indexByCat[array[i].cat]].amount -= -array[i].amount;
             }
         }
         return out;
