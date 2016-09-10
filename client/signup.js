@@ -37,10 +37,6 @@ export default class Signup extends React.Component {
 		    data: signupData
 		  })
 		  .done(function(data) {
-		    store.dispatch({
-					type: 'ADD_USER',
-					user: data
-				});
 		    console.log('userData!!!!! - ',data);
 		  });
 		}
