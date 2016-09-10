@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Nav from './nav'
-import t from 'tcomb-form';
+// import t from 'tcomb-form';
 import { browserHistory } from 'react-router'
 import $ from 'jquery';
 
@@ -33,9 +33,8 @@ export default class Login extends React.Component {
     data: value
   })
   .done(function(data) {
-    self.clearForm()
+    console.log(data)
   });
-
     const path = `/dashboard/${userName}`
     browserHistory.push(path)
   }

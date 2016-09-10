@@ -18,22 +18,10 @@ const Expenses = sequelize.define('expenses', {
   },
   recurring: {
    type: Sequelize.BOOLEAN
-  },
-  user_id: {
-    type: Sequelize.STRING
-  }
-  });
-
-  Expenses.sync({force: true}).then(function () {
-   // Table created
-   return Expenses.create({
-     title: 'Bought some meats',
-     category: 'Food',
-     amount: '100',
-     date: '1/28/2016',
-     recurring: false,
-     user_id: '1'
-   });
+ },
+ user_id: {
+   type: Sequelize.STRING
+ }
   });
 
 
