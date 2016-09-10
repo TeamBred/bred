@@ -6,20 +6,21 @@ import $ from 'jquery';
 export default class Expense extends React.Component {
 
   submit(e) {
-  	let placeholderState = {user: {id: 1}}
     e.preventDefault();
     const amount = e.target.elements[0].value;
     const category = e.target.elements[1].value;
-    const user_id = placeholderState.user.id;
+    // const username = this.props.username;
+    const username = 'placeholder';
+
     const expenseData = {
     	amount: amount,
     	category: category,
-    	user_id: user_id
+    	username: username
     }
 
 		$.ajax({
 	    type: 'POST',
-	    url: 'http://localhost:3000/api/user/' + placeholderState.user.id + '/expense',
+	    url: 'http://localhost:3000/api/user/' + username + '/expense',
 	    data: expenseData
 	  })
 	  .done(function(data) {
