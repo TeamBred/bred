@@ -44,7 +44,8 @@ export default class Login extends React.Component {
                 console.log('no bueno');
               }
           }).then( function() {
-            const path = `/dashboard/${userName}`
+
+            const path = `/dashboard/`
             browserHistory.push(path)
           })
         },

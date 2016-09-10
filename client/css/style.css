@@ -1,4 +1,8 @@
 /*GLOBAL SETTINGS*/
+* {
+  box-sizing:  border-box;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -7,6 +11,10 @@ body {
 h1, h2, h3, h4, h5 {
     font-family: 'Open Sans', sans-serif;
     font-weight: 800;
+}
+
+.expenses {
+  text-align: center;
 }
 
 .component-container {
@@ -95,21 +103,21 @@ fieldset {
 
 .flex {
   display: flex;
-  width: 95%;
+  width: 100%;
+  justify-content: space-around;
 }
 
 .time {
-  display: inline-block;
   width: 50%;
+  padding:15px;
 }
 
 .pie {
-  display: inline-block;
   width: 50%
+  padding:15px;
 }
 
 .progress {
-  width:80%;
   margin: 0 auto;
 }
 
