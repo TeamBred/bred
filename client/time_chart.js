@@ -28,7 +28,7 @@ export default class TimeChart extends React.Component {
       <div className="time">
       <VictoryChart
   height={500}
-  domainPadding={{x: 150}}>
+  domainPadding={{x: 220}}>
   <VictoryStack
     labels={cats}
     colorScale={"qualitative"}
