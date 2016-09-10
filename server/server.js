@@ -4,6 +4,7 @@ const app = express();
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const userCtrl = require('./controllers/user-controller.js');
+const expenseCtrl = require('./controllers/expense-controller.js');
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const User = require('./models/user.js');
@@ -29,6 +30,10 @@ app.post('/login',
     res.send('authentication successful');
   }
 );
+
+// expenses api
+app.get('/api/user/:id/expense', expenseCtrl.getAll);
+app.post('/api/user/:id/expense', expenseCtrl.create);
 
 passport.serializeUser(function(user, done) {
   done(null, user);

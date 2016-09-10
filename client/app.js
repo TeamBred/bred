@@ -7,6 +7,7 @@ import Signup from './signup'
 import Profile from './profile'
 import Nav from './nav';
 import * as V from 'victory';
+import Expense from './expense'
 
 class App extends React.Component {
   render() {
@@ -26,6 +27,7 @@ ReactDOM.render((
       <Route path="/login" component={Login} />
       <Route path="/signup" component={Signup} />
       <Route path="/profile" component={Profile} />
+      <Route path="/expense" component={Expense} />
     </Route>
   </Router>
 ), document.getElementById('content'));
