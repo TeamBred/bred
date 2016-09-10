@@ -19,10 +19,12 @@ const Expenses = sequelize.define('expenses', {
   recurring: {
    type: Sequelize.BOOLEAN
  },
- user_id: {
+ username: {
    type: Sequelize.STRING
  }
-  });
+});
+
+// sequelize.sync()
 
 
 module.exports = Expenses;
