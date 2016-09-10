@@ -17,7 +17,7 @@ h1, h2, h3, h4, h5 {
   text-align: center;
 }
 
-.signup-container {
+.component-container {
   width: 20em;
   margin: 2.5em auto;
 }
@@ -26,7 +26,7 @@ h1, h2, h3, h4, h5 {
   text-align: center;
   font-size: 3.5em;
   letter-spacing: .15em;
-  margin: 1em 0 0;
+  margin: 1.5em 0 .5em;
 }
 
 .input {
