@@ -13,19 +13,22 @@ class App extends React.Component {
     return (
       <div>
         <Nav />
-        {this.props.children}
+        {React.cloneElement(this.props.children, this.props)}
       </div>
     )
   }
 }
 
-ReactDOM.render((
-  <Router history={browserHistory}>
-    <Route path="/" component={App} >
-      <Route path="/dashboard/:userName" component={DashBoard} />
-      <Route path="/login" component={Login} />
-      <Route path="/signup" component={Signup} />
-      <Route path="/profile" component={Profile} />
-    </Route>
-  </Router>
-), document.getElementById('content'));
+// ReactDOM.render((
+//   <Router history={browserHistory}>
+//     <Route path="/" component={App} >
+//       <Route path="/dashboard/:userName" component={DashBoard} />
+//       <Route path="/login" component={Login} />
+//       <Route path="/signup" component={Signup} />
+//       <Route path="/profile" component={Profile} />
+//     </Route>
+//   </Router>
+// ), document.getElementById('content'));
+
+
+module.export App;
