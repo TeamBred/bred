@@ -3,9 +3,12 @@ import ReactDOM from 'react-dom';
 import Nav from './nav';
 import {Router, Route, Link} from 'react-router';
 import $ from 'jquery';
-import store from './index';
 
 export default class Signup extends React.Component {
+	constructor(props){
+		super(props);
+	}
+
 	onSubmit(evt) {
 		const self = this;
 		evt.preventDefault();
@@ -28,17 +31,6 @@ export default class Signup extends React.Component {
 				signupData.username = username;
 				signupData.email = email,
 				signupData.password = password
-				sendData(signupData);
-		}
-		function sendData(signupData) {
-		  $.ajax({
-		    type: 'POST',
-		    url: 'http://localhost:3000/signup',
-		    data: signupData
-		  })
-		  .done(function(data) {
-		    console.log('userData!!!!! - ',data);
-		  });
 		}
 	}
 
