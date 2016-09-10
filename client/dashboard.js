@@ -15,10 +15,9 @@ export default class DashBoard extends React.Component {
     return (
       <div>
         <h2>{this.props.user.username}s Dashboard</h2>
-        <Pie />
+        <h3 className="expenses">Expenses vs. Income</h3>
         <ProgressBar />
-        <Expense />
-        <ProgressBar />
+        <h3 className="expenses">Recent Expenses Breakdown</h3>
         <div className="flex">
           <Pie />
           <TimeChart />

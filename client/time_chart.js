@@ -15,7 +15,7 @@ export default class TimeChart extends React.Component {
         for (let i = 0; i< testExpenses.length;i++) {
           let costTime ={}
           if (i % 2 === 0 || i === 0) {
-            filler="gold"
+            filler="blue"
           } else {
             filler="tomato"
           }

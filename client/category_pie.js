@@ -4,9 +4,10 @@ import { VictoryPie } from 'victory';
 
 export default class Pie extends React.Component {
   render() {
-    
+
       let testExpenses = JSON.parse(localStorage.getItem("expenses"));
       let filler = ""
+      console.log(testExpenses)
 
     let flattened = function reduce(array) {
         var out = [];
@@ -16,25 +17,26 @@ export default class Pie extends React.Component {
                 indexByCat[array[i].category] = out.length;
                 out.push(array[i]);
             } else {
-                out[indexByCat[array[i].cat]].amount -= -array[i].amount;
+                out[indexByCat[array[i].category]].amount -= -array[i].amount;
             }
         }
         return out;
     }
 
-    let testData = {user:{username:'bob', expenses:flattened(testExpenses)}}
+    let expense =flattened(testExpenses)
 
     return (
       <div className="pie">
        <VictoryPie style={{
+         labels: {
+           fontSize: 20
+         },
     data: {
-      stroke: (data) => data.y > 12 ?
-        "tomato" : "black",
-      strokeWidth: (data) => data.y > 12 ?
-        3 : 1
+      stroke:"tomato",
+      strokeWidth:1
     }
   }}
-    data={testData.user.expenses}  x={"cat"} y={(data) => data.cost}  />
+    data={expense}  x={"category"} y={(data) => data.amount}  />
     </div>
     )
   }
