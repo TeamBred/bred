@@ -4,10 +4,37 @@ body {
   padding: 0;
   background: #fff;
 }
-h1, h2, h3 {
+h1, h2, h3, h4, h5 {
     font-family: 'Open Sans', sans-serif;
     font-weight: 800;
 }
+
+.signup-container {
+  width: 20em;
+  margin: 2.5em auto;
+}
+
+.signup-header {
+  text-align: center;
+  font-size: 3.5em;
+  letter-spacing: .15em;
+  margin: 1em 0 0;
+}
+
+.input {
+  display: block;
+  width: 20em;
+  height: 2em;
+  font-size: 1em;
+  margin: .5em auto;
+  padding: .5em;
+}
+
+.submit {
+  width: 100%;
+  height: 2.5em;
+}
+
 a {
     text-decoration: none;
     color: inherit;
