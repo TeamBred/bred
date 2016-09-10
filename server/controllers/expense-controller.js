@@ -17,7 +17,8 @@ function create(req, res) {
 	Expenses.create({
 		amount: req.body.amount,
 		category: req.body.category,
-		username: req.body.username
+		username: req.body.username,
+		recurring: req.body.recurring,
 	}).then(function(expense) {
 		return res.status('200').json(expense);
 	}).catch(function(err) {

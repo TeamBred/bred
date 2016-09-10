@@ -12,19 +12,15 @@ export default class Login extends React.Component {
     self = this
     const userName = evt.target.elements[0].value
     const password = evt.target.elements[1].value
-    const email = evt.target.elements[2].value
-    const income = evt.target.elements[3].value
 
     const value = {
       username: userName,
-      password: password,
-      email: email,
-      income: income
+      password: password
     }
     if (value) {
       console.log(value)
     }
-    let stringData = JSON.stringify({username: userName, email: email});
+    let stringData = JSON.stringify({username: userName});
 
     $.ajax({
         url : "http://localhost:3000/login",
@@ -33,7 +29,7 @@ export default class Login extends React.Component {
         success: function(data, textStatus, jqXHR)
         {
           localStorage.setItem("user", stringData);
-          const path = `/dashboard/${userName}`
+          const path = `/dashboard`
           browserHistory.push(path)
         },
         error: function (jqXHR, textStatus, errorThrown)
@@ -50,8 +46,6 @@ export default class Login extends React.Component {
         <form onSubmit={this.onSubmit}>
           <input type="text" placeholder="username"/> {' '}
           <input type="password" placeholder="password"/>{' '}
-          <input type="text" placeholder="email"/>{' '}
-          <input type="text" placeholder="income"/>{' '}
           <button type="submit" className="submit-button">Submit</button>
         </form>
       </div>

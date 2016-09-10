@@ -1,5 +1,5 @@
 import React from 'react';
-import { Router, Route, Link, browserHistory } from 'react-router';
+import { Router, Route, Link, browserHistory, IndexRoute } from 'react-router';
 import { Provider } from 'react-redux';
 import store, { history } from './store';
 import ReactDOM from 'react-dom';
@@ -9,16 +9,17 @@ import Signup from './client/signup'
 import Profile from './client/profile'
 import Nav from './client/nav';
 import theirApp from './theirApp';
-import * as V from 'victory';
 import Expense from './client/expense'
+import Home from './client/home'
 
 
 
 ReactDOM.render((
   <Provider store={store}>
-    <Router history={history}>
+    <Router history={browserHistory}>
       <Route path="/" component={theirApp} >
-        <Route path="/dashboard/:userName" component={DashBoard} />
+        <IndexRoute component={Home}/>
+        <Route path="/dashboard" component={DashBoard} />
         <Route path="/login" component={Login} />
         <Route path="/signup" component={Signup} />
         <Route path="/profile" component={Profile} />
