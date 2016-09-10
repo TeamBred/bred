@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import Nav from './nav';
 import {Router, Route, Link} from 'react-router';
 import $ from 'jquery';
-import store from './index';
+// import store from './index';
 
 export default class Signup extends React.Component {
 	onSubmit(evt) {
